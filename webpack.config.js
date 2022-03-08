@@ -9,6 +9,7 @@ const Dotenv = require('dotenv-webpack');
 
 const webpack = require("webpack");
 const smp = new SpeedMeasurePlugin();
+const Dotenv = require('dotenv-webpack');
 
 module.exports = smp.wrap({
   entry: {
@@ -74,9 +75,15 @@ module.exports = smp.wrap({
   },
   devServer: {
     contentBase: path.join(__dirname, './docs'),
+    publicPath: '/',
+    historyApiFallback: true,
+
   },
   plugins: [
     new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+    }),
     new HtmlWebpackPlugin({
       path: path.resolve(__dirname, "./docs"),
       template: path.resolve(__dirname, "src", "index.html"),
