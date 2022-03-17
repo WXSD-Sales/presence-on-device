@@ -35,7 +35,7 @@ module.exports = smp.wrap({
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        loader: "awesome-typescript-loader",
+        loader: "ts-loader",
         exclude: /node_modules/
       },
       {
@@ -70,7 +70,7 @@ module.exports = smp.wrap({
         loader: 'url-loader',
       },
       // { test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader' },
-      {test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader"},
+      { test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader" },
 
       { test: /\.ico$/, loader: 'file-loader' },
     ],
@@ -78,7 +78,6 @@ module.exports = smp.wrap({
   devServer: {
     contentBase: path.join(__dirname, './docs'),
     publicPath: '/',
-    historyApiFallback: true,
 
   },
   plugins: [
