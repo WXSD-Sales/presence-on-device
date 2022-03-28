@@ -8,19 +8,19 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h2 align="center">Webex Presence</h2>
+  <h2 align="center">Web Engine Calling Application for RoomOS Devices</h2>
 
   <p align="center">
-  subscribe to others presence statuses using Webex SDK internal plugin! 
+    Webex user presence lookup & SIPURI Protocol Handler dialing
     <br />
-    <a href="https://github.com/WXSD-Sales/presence-on-device"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/WXSD-Sales/PresenceOnDevice"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://wxsd-sales.github.io/presence-on-device/">View Demo</a>
+    <a href="https://wxsd-sales.github.io/PresenceOnDevice/">View Demo</a>
     ·
-    <a href="https://github.com/WXSD-Sales/presence-on-device/issues">Report Bug</a>
+    <a href="https://github.com/WXSD-Sales/PresenceOnDevice/issues">Report Bug</a>
     ·
-    <a href="https://github.com/WXSD-Sales/presence-on-device/issues">Request Feature</a>
+    <a href="https://github.com/WXSD-Sales/PresenceOnDevice/issues">Request Feature</a>
   </p>
 </p>
 
@@ -77,7 +77,7 @@ If you would like to contribute to our source code and to improve our demo, plea
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/WXSD-Sales/presence-on-device.git
+   git clone https://github.com/WXSD-Sales/PresenceOnDevice.git
    ```
 2. We use NVM to manage our node.js machine versioning. You can learn more about NVM [here](https://github.com/nvm-sh/nvm)
    ```sh
@@ -119,16 +119,16 @@ wxsd@cisco.external.com
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/WXSD-Sales/presence-on-device.svg?style=for-the-badge
-[contributors-url]: https://github.com/WXSD-Sales/presence-on-device/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/WXSD-Sales/presence-on-device.svg?style=for-the-badge
-[forks-url]: https://github.com/WXSD-Sales/presence-on-device/network/members
-[stars-shield]: https://img.shields.io/github/stars/WXSD-Sales/presence-on-device.svg?style=for-the-badge
-[stars-url]: https://github.com/WXSD-Sales/presence-on-device/stargazers
-[issues-shield]: https://img.shields.io/github/issues/WXSD-Sales/presence-on-device.svg?style=for-the-badge
-[issues-url]: https://github.com/WXSD-Sales/presence-on-device/issues
-[license-shield]: https://img.shields.io/github/license/WXSD-Sales/presence-on-device.svg?style=for-the-badge
-[license-url]: https://github.com/WXSD-Sales/presence-on-device/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/WXSD-Sales/PresenceOnDevice.svg?style=for-the-badge
+[contributors-url]: https://github.com/WXSD-Sales/PresenceOnDevice/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/WXSD-Sales/PresenceOnDevice.svg?style=for-the-badge
+[forks-url]: https://github.com/WXSD-Sales/PresenceOnDevice/network/members
+[stars-shield]: https://img.shields.io/github/stars/WXSD-Sales/PresenceOnDevice.svg?style=for-the-badge
+[stars-url]: https://github.com/WXSD-Sales/PresenceOnDevice/stargazers
+[issues-shield]: https://img.shields.io/github/issues/WXSD-Sales/PresenceOnDevice.svg?style=for-the-badge
+[issues-url]: https://github.com/WXSD-Sales/PresenceOnDevice/issues
+[license-shield]: https://img.shields.io/github/license/WXSD-Sales/PresenceOnDevice.svg?style=for-the-badge
+[license-url]: https://github.com/WXSD-Sales/PresenceOnDevice/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arash-koushkebaghi-9b1701a4/
 [product-screenshot]: assets/images/presence.png
