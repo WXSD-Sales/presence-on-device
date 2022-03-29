@@ -18,6 +18,7 @@ const Fav = ({webex, person, removePerson}: Props) => {
   };
   const updateStatus = (status) => {
     if(status === 'active') setDisableCall(false);
+    else setDisableCall(true);
   };
 
   const isXSmall = useMediaQuery({ query: `(max-width: 479px)` });

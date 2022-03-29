@@ -38,6 +38,7 @@ export default ({webex, person, allowSubscription=false, size=28, updateStatus=(
           const cleanStatus = filterStatus(status);
           
           setType(cleanStatus);
+          updateStatus(cleanStatus)
         });
       }
     } else {
@@ -47,16 +48,16 @@ export default ({webex, person, allowSubscription=false, size=28, updateStatus=(
       getPerson(undefined, person.id).then(({status}) => {
         const cleanStatus = filterStatus(status);
 
-        updateStatus(cleanStatus);
         setType(cleanStatus);
+        updateStatus(cleanStatus);
       });
 
       loop = setInterval(async() => {
         const {status} = await getPerson(undefined, person.id);
         const cleanStatus = filterStatus(status);
 
-        updateStatus(cleanStatus);
         setType(cleanStatus);
+        updateStatus(cleanStatus);
       }, Number(interval));
       
     }
