@@ -1,21 +1,26 @@
 .content {
   display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border-radius: 1rem;
+  justify-content: flex-start;
+  align-items: center;
 
-  .favs {
+  .menus {
     display: flex;
     flex-direction: column;
-    background-color: $white;
-    border-radius: 1rem;
-    justify-content: flex-start;
-    align-items: center;
-    width: 22rem;
-    height: 35rem;
+    max-height: 50rem;
+    padding: 0.5rem;
+    overflow-y: auto;
+    width: 19rem;
+    height: 25rem;
 
     @include respond-to('small') {
-      width: 30rem;
-      height: 40rem;
+      padding: 2rem;
+      width: 26rem;
+      height: 30rem;
     }
-  
+
     @include respond-to('medium') {
       width: 48rem;
       height: 35rem;
@@ -30,27 +35,17 @@
       width: 70rem;
       height: 48rem;
     }
+  }
+}
 
-    .toggle {
-      align-self: flex-end;
-      margin-top: 1rem;
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
 
-      @include respond-to('small') {
-        margin: 1rem 0.5rem 0 0;
-      }
-    }
-
-    .menus {
-      display: flex;
-      flex-direction: column;
-      max-height: 50rem;
-      padding: 0.5rem;
-      overflow-y: auto;
-
-      @include respond-to('small') {
-        padding: 1rem;
-      }
-   }
+  @include respond-to('small') {
+    margin: 1rem;
   }
 }
 

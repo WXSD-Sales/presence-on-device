@@ -19,6 +19,7 @@ const Content = ({webex}: Props): JSX.Element => {
   const [passwordErr, setPasswordErr] = useState({});
   const modalRef = useRef(null);
   const toggleRef= useRef(null);
+  const hideModal = localStorage.getItem('hideModal');
 
   const addPerson = (person) => {
     const newPeople = [...people, person];
@@ -60,6 +61,11 @@ const Content = ({webex}: Props): JSX.Element => {
   };
 
   const placeholders = <>
+    <div className='menu' />
+    <div className='menu' />
+    <div className='menu' />
+    <div className='menu' />
+    <div className='menu' />
     <div className='menu' />
     <div className='menu' />
     <div className='menu' />
@@ -125,21 +131,26 @@ const Content = ({webex}: Props): JSX.Element => {
       />
   </AlertContainer>;
 
+  const onChange = () => {
+    if(!hideModal) {
+      displayFavs ? setShowModal(true) : setDisplayFavs(true);
+    } else {
+      setDisplayFavs(!displayFavs);
+    }
+  };
+
   return <div className="content">
     {errorAlert}
     {modal}
-    <div className="favs">
-      <ToggleSwitch 
-        checked={displayFavs}
-        htmlId="toggle"
-        onChange={() => displayFavs ? setShowModal(true) : setDisplayFavs(true)}
-        ref={toggleRef}
-        className="toggle"
-      />
-      <div className="menus">
-        {displayFavs ? favs.length === 0 ? placeholders : favs : manageFavs}  
-      </div>
-    </div>
+    <ToggleSwitch 
+      checked={displayFavs}
+      htmlId="toggle"
+      onChange={onChange}
+      ref={toggleRef}
+      className="toggle"
+    />
+    <div style={{height: "2rem"}}></div>
+     {displayFavs ? favs.length === 0 ? placeholders : <div className="menus">{favs}</div> : manageFavs}  
   </div>;
 };
 

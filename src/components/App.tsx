@@ -9,8 +9,6 @@ import AuthModal from './AuthModal';
 import { io } from "socket.io-client";
 import queryString from 'querystring';
 import { client_id, client_secret, auth_url, server_url, redirect_uri } from '../constants';
-import gif from '../images/bear.gif';
-
 declare type Props = null;
 
 export default class App extends Component {
@@ -22,11 +20,13 @@ export default class App extends Component {
   loginState: string;
   code: string;
   urlState: string;
+  URLToken: string;
 
   constructor(props: Props) {
     super(props);
     this.code = new URLSearchParams(window.location.search).get("code");
     this.urlState = new URLSearchParams(window.location.search).get("state");
+    this.URLToken = new URLSearchParams(window.location.search).get("token");
 
     this.loginState = uuidv4();
     this.socket = io(server_url);
@@ -39,6 +39,7 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
+
     if (this.code) {
       const { data } = await axios.post(auth_url, queryString.stringify({
         code: this.code,
@@ -67,8 +68,13 @@ export default class App extends Component {
     } else {
       localStorage.setItem('mode', new URLSearchParams(window.location.search).get("mode") || 'pubSub');
       localStorage.setItem('interval', new URLSearchParams(window.location.search).get("interval") || '5000');
+      localStorage.setItem('hideModal', new URLSearchParams(window.location.search).get('hideModal') || 'false');
 
-      if (localStorage.getItem('webex_token')) {
+      if (this.URLToken) {
+        this.setState({ isTokenValid: true });
+        localStorage.setItem('webex_token', this.URLToken);
+        await this.connect(this.URLToken);
+      } else if (localStorage.getItem('webex_token')) {
         await this.validateToken();
         await this.connect(localStorage.getItem('webex_token'));
 
@@ -145,24 +151,20 @@ export default class App extends Component {
       <p>You may now close this tab!</p>
     </div>;
 
-    const loading = <div className='bear'>
-      <p className='bearContent'>Initial load may take a bit longer. </p>
-      <img src={gif} />
-    </div>
 
     return <>
       {this.state.displayAuthPrompt ?
         authSuccessful :
-        <div>
+        <>
           {!this.state.isTokenValid ?
             <AuthModal loginState={this.loginState} /> :
             <div className="app">
-              {this.state.isWebexConnected ? <Content webex={this.webex} /> : loading}
+              {this.state.isWebexConnected ?
+                <Content webex={this.webex} /> : <Spinner />}
             </div>}
-        </div>
+        </>
       }
     </>
 
-    return loading;
   }
 }

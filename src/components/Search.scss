@@ -7,13 +7,31 @@
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  
-  
+  width: 22rem;
+  height: 35rem;
+
+  @include respond-to('small') {
+    width: 30rem;
+    height: 40rem;
+  }
+
+  @include respond-to('medium') {
+    width: 48rem;
+    height: 35rem;
+  }
+
   @include respond-to('large') {
     align-items: flex-start;
     flex-direction: row;
+    width: 60rem;
+    height: 40rem;
   }
 
+  @include respond-to('x-large') {
+    width: 70rem;
+    height: 48rem;
+  }
+  
   .searchInput {
     display: flex;
     flex-direction: column;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import SearchList from './SearchList';
 import {InputSearch, Button} from '@momentum-ui/react';
 import {searchPeople} from '../Webex';
@@ -38,6 +38,15 @@ const SearchAvatars = ({webex, person, removePerson}) => {
 const Search = ({webex, addPerson, removePerson, people}: Props): JSX.Element => { 
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState([]);
+  const avatarsDiv = useRef(null);
+
+  const scrollToBottom = () => {
+    avatarsDiv.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [people]);
 
   const handleOnChange = (event) => {
     if(event.target.value === '') {
@@ -81,6 +90,7 @@ const Search = ({webex, addPerson, removePerson, people}: Props): JSX.Element =>
     </div>
     <div className="avatars">
       {searchAvatars}
+      <div ref={avatarsDiv}/>
     </div>
   </div>
 };
