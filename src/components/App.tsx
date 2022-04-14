@@ -27,6 +27,19 @@ export default class App extends Component {
     this.code = new URLSearchParams(window.location.search).get("code");
     this.urlState = new URLSearchParams(window.location.search).get("state");
     this.URLToken = new URLSearchParams(window.location.search).get("token");
+    
+    const validDomains = ["http://localhost:3000", "https://kaleida.ngrok.io", "https://wxsd-sales.github.io/Kaleida"];
+
+    window.addEventListener("message", (ev) => {
+      if(validDomains.includes(ev.origin)) {
+        if(ev.data.type === "sign-out") {
+          localStorage.removeItem('people');
+          localStorage.removeItem('webex_token');
+
+          window.parent.postMessage({type: "sign-out"}, "*");
+        }
+      }
+    });
 
     this.loginState = uuidv4();
     this.socket = io(server_url);
