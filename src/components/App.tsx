@@ -28,7 +28,7 @@ export default class App extends Component {
     this.urlState = new URLSearchParams(window.location.search).get("state");
     this.URLToken = new URLSearchParams(window.location.search).get("token");
     
-    const validDomains = ["http://localhost:3000", "https://kaleida.ngrok.io", "https://wxsd-sales.github.io/Kaleida"];
+    const validDomains = ["http://localhost:3000", "https://kaleida.ngrok.io", "https://wxsd-sales.github.io"];
 
     window.addEventListener("message", (ev) => {
       if(validDomains.includes(ev.origin)) {
