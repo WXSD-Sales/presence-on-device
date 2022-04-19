@@ -66,11 +66,6 @@ const Content = ({webex}: Props): JSX.Element => {
     <div className='menu' />
     <div className='menu' />
     <div className='menu' />
-    <div className='menu' />
-    <div className='menu' />
-    <div className='menu' />
-    <div className='menu' />
-    <div className='menu' />
   </>;
 
   const modal =   
