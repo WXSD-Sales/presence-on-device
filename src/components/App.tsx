@@ -35,6 +35,7 @@ export default class App extends Component {
         if(ev.data.type === "sign-out") {
           localStorage.removeItem('people');
           localStorage.removeItem('webex_token');
+          this.webex.logout();
 
           window.parent.postMessage({type: "sign-out"}, "*");
         }
