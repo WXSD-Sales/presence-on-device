@@ -27,17 +27,17 @@ export default class App extends Component {
     this.code = new URLSearchParams(window.location.search).get("code");
     this.urlState = new URLSearchParams(window.location.search).get("state");
     this.URLToken = new URLSearchParams(window.location.search).get("token");
-    
+
     const validDomains = ["http://localhost:3000", "https://kaleida.ngrok.io", "https://wxsd-sales.github.io"];
 
     window.addEventListener("message", (ev) => {
-      if(validDomains.includes(ev.origin)) {
-        if(ev.data.type === "sign-out") {
+      if (validDomains.includes(ev.origin)) {
+        if (ev.data.type === "sign-out") {
           localStorage.removeItem('people');
           localStorage.removeItem('webex_token');
           this.webex.logout();
 
-          window.parent.postMessage({type: "sign-out"}, "*");
+          window.parent.postMessage({ type: "sign-out" }, "*");
         }
       }
     });
@@ -80,9 +80,9 @@ export default class App extends Component {
         window.history.pushState({}, document.title, "/presence-on-device");
       }
     } else {
-      localStorage.setItem('mode', new URLSearchParams(window.location.search).get("mode") || 'pubSub');
+      localStorage.setItem('mode', new URLSearchParams(window.location.search).get("mode") || 'polling');
       localStorage.setItem('interval', new URLSearchParams(window.location.search).get("interval") || '5000');
-      localStorage.setItem('hideModal', new URLSearchParams(window.location.search).get('hideModal') || 'false');
+      localStorage.setItem('hideModal', new URLSearchParams(window.location.search).get('hideModal') || 'true');
 
       if (this.URLToken) {
         this.setState({ isTokenValid: true });

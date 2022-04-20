@@ -65,7 +65,7 @@ In this demo we show how to subscribe to others and set self statuses using webe
 This app accepts the following URL parameters:
 | Parameter  | Required | Description | Default
 | ------------- | ------------- | ------------- | ------------- |
-| mode | optional | retrieve live user presence data in two ways: to Poll REST API with give interval AKA 'polling' or Subscribe to Webex internal webSocket connection AKA 'pubSub' | pubSub
+| mode | optional | retrieve live user presence data in two ways: to Poll REST API with give interval AKA 'polling' or Subscribe to Webex internal webSocket connection AKA 'pubSub' | polling
 | interval | optional | Given interval in milliseconds to poll REST API if mode is set to 'polling' | 5000
 | hideModal | optional | to hide the admin login modal | false
 <!-- GETTING STARTED -->

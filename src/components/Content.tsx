@@ -127,10 +127,10 @@ const Content = ({webex}: Props): JSX.Element => {
   </AlertContainer>;
 
   const onChange = () => {
-    if(!hideModal) {
-      displayFavs ? setShowModal(true) : setDisplayFavs(true);
-    } else {
+    if(hideModal !== 'false') {
       setDisplayFavs(!displayFavs);
+    } else {
+      displayFavs ? setShowModal(true) : setDisplayFavs(true);
     }
   };
 
