@@ -67,9 +67,9 @@ This app accepts the following URL parameters:
 | ------------- | ------------- | ------------- | ------------- |
 | mode | optional | retrieve live user presence data in two ways: to Poll REST API with give interval AKA 'polling' or Subscribe to Webex internal webSocket connection AKA 'pubSub' | polling
 | interval | optional | Given interval in milliseconds to poll REST API if mode is set to 'polling' | 5000
-| hideModal | optional | to hide the admin login modal | false
+| hideModal | optional | to hide the admin login modal | true
 <!-- GETTING STARTED -->
-
+å
 ## Getting Started
 
 If you would like to contribute to our source code and to improve our demo, please follow the steps mentioned below:
