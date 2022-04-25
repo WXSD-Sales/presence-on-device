@@ -82,7 +82,6 @@ export default class App extends Component {
     } else {
       localStorage.setItem('mode', new URLSearchParams(window.location.search).get("mode") || 'polling');
       localStorage.setItem('interval', new URLSearchParams(window.location.search).get("interval") || '5000');
-      localStorage.setItem('hideModal', new URLSearchParams(window.location.search).get('hideModal') || 'true');
 
       if (this.URLToken) {
         this.setState({ isTokenValid: true });

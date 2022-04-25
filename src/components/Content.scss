@@ -38,14 +38,29 @@
   }
 }
 
-.toggle {
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+
+  @include respond-to('small') {
+    font-size: 2rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 3rem;
+  }
+}
+
+.button {
   position: absolute;
   top: 0;
   right: 0;
   margin: 0.5rem;
+  font-size: 0.9rem !important;
 
   @include respond-to('small') {
     margin: 1rem;
+    font-size: 1rem !important;
   }
 }
 
