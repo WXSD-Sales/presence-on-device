@@ -41,7 +41,7 @@ export default ({webex, person, allowSubscription=false, size=28, updateStatus=(
           updateStatus(cleanStatus)
         });
       }
-    } else {
+    } else if(mode === 'polling') {
       const interval = localStorage.getItem('interval');
       
       //Initial Load
@@ -60,6 +60,8 @@ export default ({webex, person, allowSubscription=false, size=28, updateStatus=(
         updateStatus(cleanStatus);
       }, Number(interval));
       
+    } else if(mode === 'none') {
+      setType('');
     }
   
     return  () => {

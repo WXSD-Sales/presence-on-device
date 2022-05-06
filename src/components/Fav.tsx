@@ -12,7 +12,8 @@ interface Props {
 }
 
 const Fav = ({webex, person, removePerson}: Props) => {
-  const [disableCall, setDisableCall] = useState(true);
+  const mode = localStorage.getItem('mode');
+  const [disableCall, setDisableCall] = useState(mode === "none" ? false : true);
   const callPerson = async () => {
     window.location.href = `sip:${person.emails[0]}`;
   };
