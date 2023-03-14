@@ -8,7 +8,8 @@ import { v4 as uuidv4 } from 'uuid';
 import AuthModal from './AuthModal';
 import { io } from "socket.io-client";
 import queryString from 'querystring';
-import { client_id, client_secret, auth_url, server_url, redirect_uri } from '../constants';
+import { client_id, client_secret, auth_url, server_url, redirect_uri, scope } from '../constants';
+
 declare type Props = null;
 
 export default class App extends Component {
@@ -60,7 +61,8 @@ export default class App extends Component {
         redirect_uri: redirect_uri,
         grant_type: "authorization_code",
         client_id: client_id,
-        client_secret: client_secret
+        client_secret: client_secret,
+        scope: scope
       }),
         {
           headers: {

@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["es2015", "es2020", "dom"],
+    "lib": [
+      "es2015",
+      "es2020",
+      "dom"
+    ],
     "target": "es2015",
     "sourceMap": true,
     "outDir": "docs",
@@ -8,8 +12,11 @@
     "noEmitOnError": false,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "types": [
+      "node"
+    ],
     "typeRoots": [
-			"./types",
-		]
+      "./types",
+    ]
   },
-} 
+}

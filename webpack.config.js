@@ -4,7 +4,6 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const Dotenv = require('dotenv-webpack');
 
 
 const webpack = require("webpack");
