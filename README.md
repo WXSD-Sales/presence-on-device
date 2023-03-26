@@ -1,14 +1,8 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h2 align="center">Web Engine Calling Application for RoomOS Devices</h2>
+  <h2 align="center">Presense Lookup on RoomOS Devices</h2>
 
   <p align="center">
     Webex user presence lookup & SIPURI Protocol Handler dialing
