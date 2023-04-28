@@ -51,7 +51,7 @@
 
 In this demo we show how to subscribe to others and set self statuses using webex JS SDK.
 
-### Built With
+### Dependencies
 
 - [Webex Browser SDK](https://github.com/webex/webex-js-sdk)
 - [React](https://reactjs.org)
