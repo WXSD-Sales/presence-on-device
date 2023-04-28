@@ -18,6 +18,8 @@
   </p>
 </p>
 
+ *_Everything included is for demo and Proof of Concept purposes only. Your use of the site is solely at your own risk. This site may contain links to third party content, which we do not warrant, endorse, or assume liability for. These demos are for Cisco Webex usecases, but are not Official Cisco Webex Branded demos._
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -54,6 +56,8 @@ In this demo we show how to subscribe to others and set self statuses using webe
 - [Webex Browser SDK](https://github.com/webex/webex-js-sdk)
 - [React](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Webex Integration](https://developer.webex.com/docs/integrations) with the following scopes:
+`spark:people_read`
 
 ### URL Parameters
 This app accepts the following URL parameters:
